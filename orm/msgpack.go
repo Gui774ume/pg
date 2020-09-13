@@ -7,7 +7,7 @@ import (
 	"github.com/vmihailenco/bufpool"
 	"github.com/vmihailenco/msgpack/v5"
 
-	"github.com/go-pg/pg/v10/types"
+	"github.com/gui774ume/pg/v10/types"
 )
 
 var msgpackPool bufpool.Pool

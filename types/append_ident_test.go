@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"github.com/go-pg/pg/v10/types"
+	"github.com/gui774ume/pg/v10/types"
 )
 
 var appendFieldTests = []struct {

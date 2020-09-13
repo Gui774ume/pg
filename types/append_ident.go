@@ -1,6 +1,6 @@
 package types
 
-import "github.com/go-pg/pg/v10/internal"
+import "github.com/gui774ume/pg/v10/internal"
 
 func AppendIdent(b []byte, field string, flags int) []byte {
 	return appendIdent(b, internal.StringToBytes(field), flags)

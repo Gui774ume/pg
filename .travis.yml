@@ -13,7 +13,7 @@ matrix:
   allow_failures:
     - go: tip
 
-go_import_path: github.com/go-pg/pg
+go_import_path: github.com/gui774ume/pg
 
 before_install:
   - psql -U postgres -c "CREATE EXTENSION hstore"

@@ -4,7 +4,7 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/go-pg/pg/v10/types"
+	"github.com/gui774ume/pg/v10/types"
 )
 
 type CreateTableOptions struct {

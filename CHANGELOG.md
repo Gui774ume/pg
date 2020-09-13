@@ -23,10 +23,10 @@ err := db.Model((*User)(nil)).Limit(10).Select(&mm)
 ```
 
 - Columns that start with `_` are ignored if there is no destination field.
-- Optional [faster json encoding](https://github.com/go-pg/pgext).
-- Added [pgext.OpenTelemetryHook](https://github.com/go-pg/pgext) that adds
+- Optional [faster json encoding](https://github.com/gui774ume/pgext).
+- Added [pgext.OpenTelemetryHook](https://github.com/gui774ume/pgext) that adds
   [OpenTelemetry instrumentation](https://pg.uptrace.dev/tracing/).
-- Added [pgext.DebugHook](https://github.com/go-pg/pgext) that logs failed queries.
+- Added [pgext.DebugHook](https://github.com/gui774ume/pgext) that logs failed queries.
 - Added `db.Ping` to check if database is healthy.
 
 ### Changes

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/go-pg/pg/v10/orm"
-	"github.com/go-pg/pg/v10/types"
+	"github.com/gui774ume/pg/v10/orm"
+	"github.com/gui774ume/pg/v10/types"
 )
 
 const pgTimeFormat = "15:04:05.999999999"

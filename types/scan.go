@@ -8,7 +8,7 @@ import (
 
 	"github.com/tmthrgd/go-hex"
 
-	"github.com/go-pg/pg/v10/internal"
+	"github.com/gui774ume/pg/v10/internal"
 )
 
 func Scan(v interface{}, rd Reader, n int) error {

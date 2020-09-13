@@ -3,7 +3,7 @@ package orm
 import (
 	"time"
 
-	"github.com/go-pg/pg/v10/types"
+	"github.com/gui774ume/pg/v10/types"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )
