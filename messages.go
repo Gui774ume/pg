@@ -72,7 +72,7 @@ const (
 
 var errEmptyQuery = internal.Errorf("pg: query is empty")
 
-func (db *baseDB) startup(cn *pool.Conn, user, password, database, appName string) error {
+func (db *baseDB) startup(cn *pool.Conn, user, password, hash, database, appName string) error {
 	err := cn.WithWriter(db.opt.WriteTimeout, func(wb *pool.WriteBuffer) error {
 		writeStartupMsg(wb, user, database, appName)
 		return nil
@@ -105,7 +105,7 @@ func (db *baseDB) startup(cn *pool.Conn, user, password, database, appName strin
 					return err
 				}
 			case authenticationOKMsg:
-				err := db.auth(cn, rd, user, password)
+				err := db.auth(cn, rd, user, password, hash)
 				if err != nil {
 					return err
 				}
@@ -154,7 +154,7 @@ func (db *baseDB) enableSSL(cn *pool.Conn, tlsConf *tls.Config) error {
 	return nil
 }
 
-func (db *baseDB) auth(cn *pool.Conn, rd *internal.BufReader, user, password string) error {
+func (db *baseDB) auth(cn *pool.Conn, rd *internal.BufReader, user, password, hash string) error {
 	num, err := readInt32(rd)
 	if err != nil {
 		return err
@@ -166,7 +166,7 @@ func (db *baseDB) auth(cn *pool.Conn, rd *internal.BufReader, user, password str
 	case authenticationCleartextPassword:
 		return db.authCleartext(cn, rd, password)
 	case authenticationMD5Password:
-		return db.authMD5(cn, rd, user, password)
+		return db.authMD5(cn, rd, user, password, hash)
 	case authenticationSASL:
 		return db.authSASL(cn, rd, user, password)
 	default:
@@ -185,13 +185,16 @@ func (db *baseDB) authCleartext(cn *pool.Conn, rd *internal.BufReader, password 
 	return readAuthOK(rd)
 }
 
-func (db *baseDB) authMD5(cn *pool.Conn, rd *internal.BufReader, user, password string) error {
+func (db *baseDB) authMD5(cn *pool.Conn, rd *internal.BufReader, user, password, hash string) error {
 	b, err := rd.ReadN(4)
 	if err != nil {
 		return err
 	}
 
-	secret := "md5" + md5s(md5s(password+user)+string(b))
+	if hash == "" {
+		hash = md5s(password+user)
+	}
+	secret := "md5" + md5s(hash+string(b))
 	err = cn.WithWriter(db.opt.WriteTimeout, func(wb *pool.WriteBuffer) error {
 		writePasswordMsg(wb, secret)
 		return nil

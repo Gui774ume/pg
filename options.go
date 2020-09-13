@@ -30,6 +30,7 @@ type Options struct {
 
 	User     string
 	Password string
+	Hash string
 	Database string
 
 	// ApplicationName is the application name. Used in logs on Pg side.
