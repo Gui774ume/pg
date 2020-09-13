@@ -5,10 +5,10 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/go-pg/pg/internal"
-	"github.com/go-pg/pg/internal/iszero"
-	"github.com/go-pg/pg/internal/tag"
-	"github.com/go-pg/pg/types"
+	"github.com/gui774ume/pg/internal"
+	"github.com/gui774ume/pg/internal/iszero"
+	"github.com/gui774ume/pg/internal/tag"
+	"github.com/gui774ume/pg/types"
 )
 
 type opCode int

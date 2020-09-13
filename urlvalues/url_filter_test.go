@@ -7,8 +7,8 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	"github.com/go-pg/pg/orm"
-	"github.com/go-pg/pg/urlvalues"
+	"github.com/gui774ume/pg/orm"
+	"github.com/gui774ume/pg/urlvalues"
 )
 
 func TestGinkgo(t *testing.T) {

@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"strconv"
 
-	"github.com/go-pg/pg/internal"
-	"github.com/go-pg/pg/orm"
+	"github.com/gui774ume/pg/internal"
+	"github.com/gui774ume/pg/orm"
 )
 
 type Result = orm.Result

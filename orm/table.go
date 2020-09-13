@@ -10,10 +10,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/go-pg/pg/internal"
-	"github.com/go-pg/pg/internal/iszero"
-	"github.com/go-pg/pg/internal/tag"
-	"github.com/go-pg/pg/types"
+	"github.com/gui774ume/pg/internal"
+	"github.com/gui774ume/pg/internal/iszero"
+	"github.com/gui774ume/pg/internal/tag"
+	"github.com/gui774ume/pg/types"
 )
 
 const (
@@ -113,31 +113,31 @@ func newTable(typ reflect.Type) *Table {
 	}
 
 	if typ.Implements(oldAfterQueryHookType) {
-		panic(fmt.Sprintf("%s.AfterQuery must be updated - https://github.com/go-pg/pg/wiki/Model-Hooks", t.TypeName))
+		panic(fmt.Sprintf("%s.AfterQuery must be updated - https://github.com/gui774ume/pg/wiki/Model-Hooks", t.TypeName))
 	}
 	if typ.Implements(oldBeforeSelectQueryHookType) {
-		panic(fmt.Sprintf("%s.BeforeSelectQuery must be updated - https://github.com/go-pg/pg/wiki/Model-Hooks", t.TypeName))
+		panic(fmt.Sprintf("%s.BeforeSelectQuery must be updated - https://github.com/gui774ume/pg/wiki/Model-Hooks", t.TypeName))
 	}
 	if typ.Implements(oldAfterSelectHookType) {
-		panic(fmt.Sprintf("%s.AfterSelect must be updated - https://github.com/go-pg/pg/wiki/Model-Hooks", t.TypeName))
+		panic(fmt.Sprintf("%s.AfterSelect must be updated - https://github.com/gui774ume/pg/wiki/Model-Hooks", t.TypeName))
 	}
 	if typ.Implements(oldBeforeInsertHookType) {
-		panic(fmt.Sprintf("%s.BeforeInsert must be updated - https://github.com/go-pg/pg/wiki/Model-Hooks", t.TypeName))
+		panic(fmt.Sprintf("%s.BeforeInsert must be updated - https://github.com/gui774ume/pg/wiki/Model-Hooks", t.TypeName))
 	}
 	if typ.Implements(oldAfterInsertHookType) {
-		panic(fmt.Sprintf("%s.AfterInsert must be updated - https://github.com/go-pg/pg/wiki/Model-Hooks", t.TypeName))
+		panic(fmt.Sprintf("%s.AfterInsert must be updated - https://github.com/gui774ume/pg/wiki/Model-Hooks", t.TypeName))
 	}
 	if typ.Implements(oldBeforeUpdateHookType) {
-		panic(fmt.Sprintf("%s.BeforeUpdate must be updated - https://github.com/go-pg/pg/wiki/Model-Hooks", t.TypeName))
+		panic(fmt.Sprintf("%s.BeforeUpdate must be updated - https://github.com/gui774ume/pg/wiki/Model-Hooks", t.TypeName))
 	}
 	if typ.Implements(oldAfterUpdateHookType) {
-		panic(fmt.Sprintf("%s.AfterUpdate must be updated - https://github.com/go-pg/pg/wiki/Model-Hooks", t.TypeName))
+		panic(fmt.Sprintf("%s.AfterUpdate must be updated - https://github.com/gui774ume/pg/wiki/Model-Hooks", t.TypeName))
 	}
 	if typ.Implements(oldBeforeDeleteHookType) {
-		panic(fmt.Sprintf("%s.BeforeDelete must be updated - https://github.com/go-pg/pg/wiki/Model-Hooks", t.TypeName))
+		panic(fmt.Sprintf("%s.BeforeDelete must be updated - https://github.com/gui774ume/pg/wiki/Model-Hooks", t.TypeName))
 	}
 	if typ.Implements(oldAfterDeleteHookType) {
-		panic(fmt.Sprintf("%s.AfterDelete must be updated - https://github.com/go-pg/pg/wiki/Model-Hooks", t.TypeName))
+		panic(fmt.Sprintf("%s.AfterDelete must be updated - https://github.com/gui774ume/pg/wiki/Model-Hooks", t.TypeName))
 	}
 
 	return t

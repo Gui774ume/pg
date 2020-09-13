@@ -1,7 +1,7 @@
 package urlvalues
 
 import (
-	"github.com/go-pg/pg/orm"
+	"github.com/gui774ume/pg/orm"
 )
 
 type Pager struct {

@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-pg/pg/internal/pool"
+	"github.com/gui774ume/pg/internal/pool"
 )
 
 // Database connection options.

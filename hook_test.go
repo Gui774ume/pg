@@ -7,8 +7,8 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	"github.com/go-pg/pg"
-	"github.com/go-pg/pg/orm"
+	"github.com/gui774ume/pg"
+	"github.com/gui774ume/pg/orm"
 )
 
 type HookTest struct {
